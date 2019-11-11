@@ -6,29 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Hierarchical | Identifying topics from news to add to Hindi Wikipedia</title>
+<title>Identifying topics/pages to be included in Indian Language Wikipedia | Identifying topics from news to add to Hindi Wikipedia</title>
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="Hierarchical" />
+<meta property="og:title" content="Identifying topics/pages to be included in Indian Language Wikipedia" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Identifying topics from news to add to Hindi Wikipedia" />
 <meta property="og:description" content="Identifying topics from news to add to Hindi Wikipedia" />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Hierarchical" />
+<meta property="og:site_name" content="Identifying topics/pages to be included in Indian Language Wikipedia" />
 <script type="application/ld+json">
-{"@type":"WebSite","headline":"Hierarchical","url":"http://localhost:4000/","name":"Hierarchical","description":"Identifying topics from news to add to Hindi Wikipedia","@context":"http://schema.org"}</script>
+{"@type":"WebSite","url":"http://localhost:4000/","headline":"Identifying topics/pages to be included in Indian Language Wikipedia","name":"Identifying topics/pages to be included in Indian Language Wikipedia","description":"Identifying topics from news to add to Hindi Wikipedia","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=0017b51572921188c3e606d2e4fe8fff9ec100d0">
+    <link rel="stylesheet" href="/assets/css/style.css?v=539411563ea087dbf02c8f6b4a2a36563c7338f0">
     <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="http://localhost:4000/">Hierarchical</a></h1>
-        
+        <h1><a href="http://localhost:4000/">Identifying topics/pages to be included in Indian Language Wikipedia</a></h1>
+
         
 
         <p>Identifying topics from news to add to Hindi Wikipedia</p>
@@ -43,40 +43,48 @@
       </header>
       <section>
 
-      <p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
+      <p><a href="https://github.com/SanjanaSunil/ire-major-project">Link to the code base</a>.</p>
 
-<p><a href="./another-page.html">Link to another page</a>.</p>
+<h1 id="overview">Overview</h1>
 
-<p>There should be whitespace between paragraphs.</p>
+<p>Wikipedia in Indian languages are not as well developed as the English
+Wikipedia despite increase in usage. There are 1,33,944 articles in Hindi Wikipedia as compared to 59,64,000 articles in English Wikipedia. The focus of our project will be to identify new topics that could be added to Hindi Wikipedia.</p>
 
-<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
+<p>We have identified three main forms of resources for new
+topics,</p>
+<ol>
+  <li>News articles for current, relevant topics</li>
+  <li>Topics that are related to pre-existing Wikipedia pages and</li>
+  <li>Topics that are relevant in a particular field.</li>
+</ol>
 
-<h1 id="header-1">Header 1</h1>
+<p>Named entity recognition is performed on each of these resources and
+topics are extracted.</p>
 
-<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
+<h1 id="methodology">Methodology</h1>
 
-<h2 id="header-2">Header 2</h2>
+<h2 id="initial-proposed-methodology">Initial Proposed Methodology</h2>
+<p>The method initially proposed involved supervised learning based on vital topics that need to be present in every language.
+In this approach, these topics are used as positive samples and new topics are classified. However, further analysis suggested that this might not be a good method, primarily because, topics that fall outside the scope of these vital articles but are still relevant (e.g. trending news articles) would not be included. Additionally, there is nothing such as a ’good’ or ’bad’ topic, especially when Wikipedia aims to encompass as much content as it can.</p>
 
-<blockquote>
-  <p>This is a blockquote following a header.</p>
+<h2 id="current-methodology">Current Methodology</h2>
+<p>The current methodology is based on the collection of various types of useful resources and selection of possible topics after performing named entity recognition on the content.</p>
 
-  <p>When something is important enough, you do it even if the odds are not in your favor.</p>
-</blockquote>
+<p><img src="/assets/Flowchart.png" alt="Flow Chart" /></p>
 
-<h3 id="header-3">Header 3</h3>
+<p>First, resources (news, domain articles,
+wikipedia articles) are scraped for content. Then NER is performed on the content. Finally, possible new topics are identified from the list of named entities.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Javascript code with syntax highlighting.</span>
-<span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">lang</span><span class="p">(</span><span class="nx">l</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">dateformat</span><span class="p">.</span><span class="nx">i18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./lang/'</span> <span class="o">+</span> <span class="nx">l</span><span class="p">)</span>
-  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>The primary focus of our current methodology is on collection of a wide variety of resources that are relevant in the Indian context and could contain probable new topics. We have identified three primary types of resources that collectively help in improving the breadth, depth and inter-connectivity of Wikipedia:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby code with syntax highlighting</span>
-<span class="no">GitHubPages</span><span class="o">::</span><span class="no">Dependencies</span><span class="p">.</span><span class="nf">gems</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gem</span><span class="p">,</span> <span class="n">version</span><span class="o">|</span>
-  <span class="n">s</span><span class="p">.</span><span class="nf">add_dependency</span><span class="p">(</span><span class="n">gem</span><span class="p">,</span> <span class="s2">"= </span><span class="si">#{</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<h3 id="pre-existing-wikipedia-articles">Pre-existing Wikipedia articles</h3>
+<p>Wikipedia articles contain a lot of information about a specific article. This information can be extracted and analyzed for new topics that don’t already exist in Wikipedia pages. This would improve inter-connectivity of topics.</p>
+
+<h3 id="news">News</h3>
+<p>Trending Hindi news articles is a useful resource for new topics. This could potentially give a list of currently important people, events etc. that are unlikely to have a Wikipedia page considering their very recent. Extraction of new topics from the news would improve the breadth of the existing Wikipedia.</p>
+
+<p><img src="/assets/Resources.png" alt="Flow Chart" />
+<!-- ### {Domain specific resources:} New topics can also be identified from domain specific blogs and articles. These domains could include health, technology, politics etc. Identification of topics from such domains would improve the depth of the existing Wikipedia. --></p>
 
 <h4 id="header-4">Header 4</h4>
 
@@ -213,7 +221,7 @@
         
         <p>This project is maintained by <a href="https://github.com/7vikpeculiar">7vikpeculiar</a></p>
         
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <!-- <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p> -->
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
