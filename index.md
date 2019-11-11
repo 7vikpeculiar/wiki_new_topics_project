@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[Link to the code base](https://github.com/SanjanaSunil/ire-major-project).
+<!-- [Link to the code base](https://github.com/SanjanaSunil/ire-major-project). -->
 
 # Overview
 
@@ -17,6 +17,8 @@ topics,
 
 Named entity recognition is performed on each of these resources and
 topics are extracted.
+
+* * *
 
 # Methodology
 
@@ -40,9 +42,15 @@ Wikipedia articles contain a lot of information about a specific article. This i
 ### News
 Trending Hindi news articles is a useful resource for new topics. This could potentially give a list of currently important people, events etc. that are unlikely to have a Wikipedia page considering their very recent. Extraction of new topics from the news would improve the breadth of the existing Wikipedia.
 
+### Domain specific resources
+New topics can also be identified from domain specific blogs and articles. These domains could include health, technology, politics etc. Identification of topics from such domains would improve the depth of the existing Wikipedia.
+
 ![Flow Chart](/assets/Resources.png)
-<!-- ### {Domain specific resources:} New topics can also be identified from domain specific blogs and articles. These domains could include health, technology, politics etc. Identification of topics from such domains would improve the depth of the existing Wikipedia. -->
-## Implementation Details
+
+* * *
+
+# Implementation Details
+
 ### Improving inter-connectivity using existing Wikipedia pages
 Inter-connectivity of topics can be improved by adding more link enriching topics. Each of the Wikipedia articles can be viewed as a set of links to other Wikipedia articles. Since Hindi Wikipedia is only 1/10th the size of English Wikipedia, we hypothesize that a lot of topics can be found by filtering relevant words from pre-existing Wikipedia articles.
 Around a thousand randomly chosen HindiWikipedia articles were scraped.
@@ -62,83 +70,40 @@ Extraction of keywords from news articles would help identify completely new eve
 
 ![Flow Chart](/assets/Expansion.png)
 
-### Improving depth of topics using domain specific articles}
+### Improving depth of topics using domain specific articles
 Depth of Hindi Wikipedia articles can be improved by using domain specific articles. For example, by scraping articles relating to medicine and extracting corresponding keywords, we can improve the depth of the health domain.
 
 Wikipedia already has a pre-defined taxonomy and this was used as a basis for vertical expansion of Hindi encyclopedia. Articles belonging to various domains like health, movies, politics, science, sports and technology were scraped from different blogs and websites that are relevant to the specific domain. The scraped data is present [here](https://github.com/SanjanaSunil/ire-major-project/tree/master/data).
 
-#### Link to Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I7A8KhLrG1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+### NER and topic identification
 
-##### Header 5
+After the data was scrapped from the three different resources, keywords were extracted from them. These keywords are possible candidates for new topics to be added to Hindi Wikipedia.
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+To extract keywords, from any piece of text, named entity recognition was performed. This was achieved by using a Part-of-Speech tagger for Hindi and extracting proper nouns. Proper nouns are given more focus since they are less likely to be present in Wikipedia as opposed to more generic entities and objects. We tried several different NER tools and taggers and found [this one](https://bitbucket.org/sivareddyg/hindi-part-of-speech-tagger/src/master/) to work the best. It is based on TnT tagger.
 
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
+After this, topic identification was done. This was done by filtering out the named entities to check whether they already exist in Hindi Wikipedia by using a Wikipedia API. This extends to n-grams.
 
 * * *
 
-### Here is an unordered list:
+# Evaluation Mechanism and Results
+The performance of our methodology is dependent entirely on the performance of the POS tagger. This directly affects NER and checking whether a topic already exists or not. The POS tagger we used claims to have a precision of 0.854914 and recall of 0.948462 for proper nouns. However, on running the code, the accuracy was less than this, there appeared to be more common words (more than 30\%). There weren't as many stopwords in the topics extracted from Wikipedia articles, as there were in the topics extracted from blog articles, possibly due to Wikipedia having less redundant sentences.
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+The next part, checking whether the topic is already present in the existing Wikipedia was done with very high accuracy. Nearly all the topics in the final list did not have their own Wikipedia page. The only issue that could arise was if there was a lesser known synonym of a Hindi word that had it's own Wikipedia page and should hence redirect to it instead of suggesting a new topic.
 
-### And an ordered list:
+A proper evaluation metric for deciding if a suggested topic is useful or not is hard to decide. This is mainly because even though there were several common words in the final list, they didn't have their own Hindi Wikipedia page, even if it was present in English. For example, one of our suggested topic was मैगजीन (magazine), which despite being a common word has an English Wikipedia page of its own, but no Hindi Wikipedia page.
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+* * *
+# Analysis
+Named entity recognition is the most important aspect of this project. There were several limitations in the NER tool we used:
 
-### And a nested list:
+* The POS tagger focused only on unigrams. To overcome this difficulty, we took consecutive words that had all been tagged as a proper noun and grouped them as one proper noun. However, this would not be accurate in a lot of cases, especially when it comes to Indian languages where the structure of the sentence is different.
+* Some stopwords were also included in the final result.
+* Some of the topics that are suggested might not be accurate. For example, the scraped data that could have names that aren't important enough to be added to Wikipedia but they would have been picked up by the POS tagger.
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+To avoid common words, we could check if the word belong to the Hindi dictionary before suggesting them as a topic. However, this is not a serious  shortcoming because as mentioned previously, Wikipedia has articles on almost everything.
 
-### Definition lists can be used with HTML syntax.
+* * *
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I7A8KhLrG1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+* * *

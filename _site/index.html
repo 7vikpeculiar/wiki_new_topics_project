@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Identifying topics/pages to be included in Indian Language Wikipedia | Identifying topics from news to add to Hindi Wikipedia</title>
+<title>Identifying topics/pages to be included in Indian Language Wikipedia | Documentation for ire final project</title>
 <meta name="generator" content="Jekyll v3.7.4" />
 <meta property="og:title" content="Identifying topics/pages to be included in Indian Language Wikipedia" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Identifying topics from news to add to Hindi Wikipedia" />
-<meta property="og:description" content="Identifying topics from news to add to Hindi Wikipedia" />
+<meta name="description" content="Documentation for ire final project" />
+<meta property="og:description" content="Documentation for ire final project" />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Identifying topics/pages to be included in Indian Language Wikipedia" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"Identifying topics/pages to be included in Indian Language Wikipedia","name":"Identifying topics/pages to be included in Indian Language Wikipedia","description":"Identifying topics from news to add to Hindi Wikipedia","@context":"http://schema.org"}</script>
+{"@type":"WebSite","headline":"Identifying topics/pages to be included in Indian Language Wikipedia","url":"http://localhost:4000/","name":"Identifying topics/pages to be included in Indian Language Wikipedia","description":"Documentation for ire final project","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=113c9ce9605b511e418eeb58afbdf2d4f6cc766e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=120b48444096e9c961cf9c74472131b470fbaa53">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -31,10 +31,10 @@
 
         
 
-        <p>Identifying topics from news to add to Hindi Wikipedia</p>
+        <p></p>
 
         
-        <p class="view"><a href="https://github.com/7vikpeculiar/wiki_new_topics_project">View the Project on GitHub <small>7vikpeculiar/wiki_new_topics_project</small></a></p>
+        <p class="view"><a href="https://github.com/SanjanaSunil/ire-major-project">View the Project on GitHub <small>SanjanaSunil/ire-major-project</small></a></p>
         
 
         
@@ -43,7 +43,7 @@
       </header>
       <section>
 
-      <p><a href="https://github.com/SanjanaSunil/ire-major-project">Link to the code base</a>.</p>
+      <!-- [Link to the code base](https://github.com/SanjanaSunil/ire-major-project). -->
 
 <h1 id="overview">Overview</h1>
 
@@ -60,6 +60,8 @@ topics,</p>
 
 <p>Named entity recognition is performed on each of these resources and
 topics are extracted.</p>
+
+<hr />
 
 <h1 id="methodology">Methodology</h1>
 
@@ -83,9 +85,15 @@ wikipedia articles) are scraped for content. Then NER is performed on the conten
 <h3 id="news">News</h3>
 <p>Trending Hindi news articles is a useful resource for new topics. This could potentially give a list of currently important people, events etc. that are unlikely to have a Wikipedia page considering their very recent. Extraction of new topics from the news would improve the breadth of the existing Wikipedia.</p>
 
-<p><img src="/assets/Resources.png" alt="Flow Chart" />
-<!-- ### {Domain specific resources:} New topics can also be identified from domain specific blogs and articles. These domains could include health, technology, politics etc. Identification of topics from such domains would improve the depth of the existing Wikipedia. --></p>
-<h2 id="implementation-details">Implementation Details</h2>
+<h3 id="domain-specific-resources">Domain specific resources</h3>
+<p>New topics can also be identified from domain specific blogs and articles. These domains could include health, technology, politics etc. Identification of topics from such domains would improve the depth of the existing Wikipedia.</p>
+
+<p><img src="/assets/Resources.png" alt="Flow Chart" /></p>
+
+<hr />
+
+<h1 id="implementation-details">Implementation Details</h1>
+
 <h3 id="improving-inter-connectivity-using-existing-wikipedia-pages">Improving inter-connectivity using existing Wikipedia pages</h3>
 <p>Inter-connectivity of topics can be improved by adding more link enriching topics. Each of the Wikipedia articles can be viewed as a set of links to other Wikipedia articles. Since Hindi Wikipedia is only 1/10th the size of English Wikipedia, we hypothesize that a lot of topics can be found by filtering relevant words from pre-existing Wikipedia articles.
 Around a thousand randomly chosen HindiWikipedia articles were scraped.
@@ -105,137 +113,56 @@ aren’t already present in Hindi Wikipedia are not very well-developed. A lot o
 
 <p><img src="/assets/Expansion.png" alt="Flow Chart" /></p>
 
-<h3 id="improving-depth-of-topics-using-domain-specific-articles">Improving depth of topics using domain specific articles}</h3>
+<h3 id="improving-depth-of-topics-using-domain-specific-articles">Improving depth of topics using domain specific articles</h3>
 <p>Depth of Hindi Wikipedia articles can be improved by using domain specific articles. For example, by scraping articles relating to medicine and extracting corresponding keywords, we can improve the depth of the health domain.</p>
 
 <p>Wikipedia already has a pre-defined taxonomy and this was used as a basis for vertical expansion of Hindi encyclopedia. Articles belonging to various domains like health, movies, politics, science, sports and technology were scraped from different blogs and websites that are relevant to the specific domain. The scraped data is present <a href="https://github.com/SanjanaSunil/ire-major-project/tree/master/data">here</a>.</p>
 
-<h4 id="link-to-video">Link to Video</h4>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I7A8KhLrG1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<ul>
-  <li>This is an unordered list following a header.</li>
-  <li>This is an unordered list following a header.</li>
-  <li>This is an unordered list following a header.</li>
-</ul>
+<h3 id="ner-and-topic-identification">NER and topic identification</h3>
 
-<h5 id="header-5">Header 5</h5>
+<p>After the data was scrapped from the three different resources, keywords were extracted from them. These keywords are possible candidates for new topics to be added to Hindi Wikipedia.</p>
 
-<ol>
-  <li>This is an ordered list following a header.</li>
-  <li>This is an ordered list following a header.</li>
-  <li>This is an ordered list following a header.</li>
-</ol>
+<p>To extract keywords, from any piece of text, named entity recognition was performed. This was achieved by using a Part-of-Speech tagger for Hindi and extracting proper nouns. Proper nouns are given more focus since they are less likely to be present in Wikipedia as opposed to more generic entities and objects. We tried several different NER tools and taggers and found <a href="https://bitbucket.org/sivareddyg/hindi-part-of-speech-tagger/src/master/">this one</a> to work the best. It is based on TnT tagger.</p>
 
-<h6 id="header-6">Header 6</h6>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">head1</th>
-      <th style="text-align: left">head two</th>
-      <th style="text-align: left">three</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">ok</td>
-      <td style="text-align: left">good swedish fish</td>
-      <td style="text-align: left">nice</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">out of stock</td>
-      <td style="text-align: left">good and plenty</td>
-      <td style="text-align: left">nice</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">ok</td>
-      <td style="text-align: left">good <code class="highlighter-rouge">oreos</code></td>
-      <td style="text-align: left">hmm</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">ok</td>
-      <td style="text-align: left">good <code class="highlighter-rouge">zoute</code> drop</td>
-      <td style="text-align: left">yumm</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="theres-a-horizontal-rule-below-this">There’s a horizontal rule below this.</h3>
+<p>After this, topic identification was done. This was done by filtering out the named entities to check whether they already exist in Hindi Wikipedia by using a Wikipedia API. This extends to n-grams.</p>
 
 <hr />
 
-<h3 id="here-is-an-unordered-list">Here is an unordered list:</h3>
+<h1 id="evaluation-mechanism-and-results">Evaluation Mechanism and Results</h1>
+<p>The performance of our methodology is dependent entirely on the performance of the POS tagger. This directly affects NER and checking whether a topic already exists or not. The POS tagger we used claims to have a precision of 0.854914 and recall of 0.948462 for proper nouns. However, on running the code, the accuracy was less than this, there appeared to be more common words (more than 30\%). There weren’t as many stopwords in the topics extracted from Wikipedia articles, as there were in the topics extracted from blog articles, possibly due to Wikipedia having less redundant sentences.</p>
+
+<p>The next part, checking whether the topic is already present in the existing Wikipedia was done with very high accuracy. Nearly all the topics in the final list did not have their own Wikipedia page. The only issue that could arise was if there was a lesser known synonym of a Hindi word that had it’s own Wikipedia page and should hence redirect to it instead of suggesting a new topic.</p>
+
+<p>A proper evaluation metric for deciding if a suggested topic is useful or not is hard to decide. This is mainly because even though there were several common words in the final list, they didn’t have their own Hindi Wikipedia page, even if it was present in English. For example, one of our suggested topic was मैगजीन (magazine), which despite being a common word has an English Wikipedia page of its own, but no Hindi Wikipedia page.</p>
+
+<hr />
+<h1 id="analysis">Analysis</h1>
+<p>Named entity recognition is the most important aspect of this project. There were several limitations in the NER tool we used:</p>
 
 <ul>
-  <li>Item foo</li>
-  <li>Item bar</li>
-  <li>Item baz</li>
-  <li>Item zip</li>
+  <li>The POS tagger focused only on unigrams. To overcome this difficulty, we took consecutive words that had all been tagged as a proper noun and grouped them as one proper noun. However, this would not be accurate in a lot of cases, especially when it comes to Indian languages where the structure of the sentence is different.</li>
+  <li>Some stopwords were also included in the final result.</li>
+  <li>Some of the topics that are suggested might not be accurate. For example, the scraped data that could have names that aren’t important enough to be added to Wikipedia but they would have been picked up by the POS tagger.</li>
 </ul>
 
-<h3 id="and-an-ordered-list">And an ordered list:</h3>
+<p>To avoid common words, we could check if the word belong to the Hindi dictionary before suggesting them as a topic. However, this is not a serious  shortcoming because as mentioned previously, Wikipedia has articles on almost everything.</p>
 
-<ol>
-  <li>Item one</li>
-  <li>Item two</li>
-  <li>Item three</li>
-  <li>Item four</li>
-</ol>
+<hr />
+<h1 id="video">Video</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I7A8KhLrG1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-<h3 id="and-a-nested-list">And a nested list:</h3>
-
-<ul>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item
-        <ul>
-          <li>level 3 item</li>
-          <li>level 3 item</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item</li>
-</ul>
-
-<h3 id="definition-lists-can-be-used-with-html-syntax">Definition lists can be used with HTML syntax.</h3>
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-</code></pre></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
-</code></pre></div></div>
+<hr />
 
 
       </section>
       <footer>
         
-        <p>This project is maintained by <a href="https://github.com/7vikpeculiar">7vikpeculiar</a></p>
+        <p>This project is built by the team
+          <a href="https://github.com/7vikpeculiar">7vikpeculiar</a><br/>
+          <a href="https://github.com/SanjanaSunil">SanjanaSunil</a><br />
+          <a href="https://github.com/arghyatiger">arghyatiger</a><br/>
+          <a href="https://github.com/NehaMotlani">NehaMotlani</a><br/>
+        </p>
         
         <!-- <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p> -->
       </footer>
