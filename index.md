@@ -86,11 +86,25 @@ After this, topic identification was done. This was done by filtering out the na
 * * *
 
 # Evaluation Mechanism and Results
-The performance of our methodology is dependent entirely on the performance of the POS tagger. This directly affects NER and checking whether a topic already exists or not. The POS tagger we used claims to have a precision of 0.854914 and recall of 0.948462 for proper nouns. However, on running the code, the accuracy was less than this, there appeared to be more common words (more than 30\%). There weren't as many stopwords in the topics extracted from Wikipedia articles, as there were in the topics extracted from blog articles, possibly due to Wikipedia having less redundant sentences.
+The performance of our methodology is dependent entirely on the performance of the POS tagger. This directly affects NER and checking whether a topic already exists or not. The POS tagger we used claims to have a precision of 0.854914 and recall of 0.948462 for proper nouns. However, on running the code, the accuracy was less than this, there appeared to be more common words (more than 30%). There weren't as many stopwords in the topics extracted from Wikipedia articles, as there were in the topics extracted from blog articles, possibly due to Wikipedia having less redundant sentences.
 
 The next part, checking whether the topic is already present in the existing Wikipedia was done with very high accuracy. Nearly all the topics in the final list did not have their own Wikipedia page. The only issue that could arise was if there was a lesser known synonym of a Hindi word that had it's own Wikipedia page and should hence redirect to it instead of suggesting a new topic.
 
 A proper evaluation metric for deciding if a suggested topic is useful or not is hard to decide. This is mainly because even though there were several common words in the final list, they didn't have their own Hindi Wikipedia page, even if it was present in English. For example, one of our suggested topic was मैगजीन (magazine), which despite being a common word has an English Wikipedia page of its own, but no Hindi Wikipedia page.
+
+Disregarding common words, our methodology did really well, especially in the case of domain expansion. For example, in the health domain, the following topics were suggested to be added:
+* मैलेनिन (melanin),
+* प्रोजेस्टेरान (progesterone)
+* प्लाजमा (plasma)
+* पीयूषिका (pituitary)
+* स्कैबीज़ (scabies)
+* स्पोन्डीलाइटिस (spondylitis) and several more medical terms that don't have their own Hindi Wikipedia page.
+
+In technology domain, one example was पिन्तेरेस्ट (Pinterest).
+
+A lot of the new topics could help in domain expansion and depth improvement of Wikipedia.
+
+Similar results were also obtained for other resources. Results that were relavent to the Indian context was also obtained. For example, पधनीपुर (Dhanipur, place in Uttar Pradesh) was suggested as a new topic, even though it does not have a page in English Wikipedia. It was obtained from a BBC news article and is relavent to India. Clearly, news articles help in improving the breadth of Wikipedia. Similarly, topics extracted from Wikipedia articles themselves suggested related topics and could help improve inter-connectivity.
 
 * * *
 # Analysis

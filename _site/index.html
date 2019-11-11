@@ -19,7 +19,7 @@
 {"@type":"WebSite","headline":"Identifying topics/pages to be included in Indian Language Wikipedia","url":"http://localhost:4000/","name":"Identifying topics/pages to be included in Indian Language Wikipedia","description":"Documentation for ire final project","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=120b48444096e9c961cf9c74472131b470fbaa53">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e6cd29cd31acb29d12c61a3ff5717a466b9bfade">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -129,11 +129,27 @@ aren’t already present in Hindi Wikipedia are not very well-developed. A lot o
 <hr />
 
 <h1 id="evaluation-mechanism-and-results">Evaluation Mechanism and Results</h1>
-<p>The performance of our methodology is dependent entirely on the performance of the POS tagger. This directly affects NER and checking whether a topic already exists or not. The POS tagger we used claims to have a precision of 0.854914 and recall of 0.948462 for proper nouns. However, on running the code, the accuracy was less than this, there appeared to be more common words (more than 30\%). There weren’t as many stopwords in the topics extracted from Wikipedia articles, as there were in the topics extracted from blog articles, possibly due to Wikipedia having less redundant sentences.</p>
+<p>The performance of our methodology is dependent entirely on the performance of the POS tagger. This directly affects NER and checking whether a topic already exists or not. The POS tagger we used claims to have a precision of 0.854914 and recall of 0.948462 for proper nouns. However, on running the code, the accuracy was less than this, there appeared to be more common words (more than 30%). There weren’t as many stopwords in the topics extracted from Wikipedia articles, as there were in the topics extracted from blog articles, possibly due to Wikipedia having less redundant sentences.</p>
 
 <p>The next part, checking whether the topic is already present in the existing Wikipedia was done with very high accuracy. Nearly all the topics in the final list did not have their own Wikipedia page. The only issue that could arise was if there was a lesser known synonym of a Hindi word that had it’s own Wikipedia page and should hence redirect to it instead of suggesting a new topic.</p>
 
 <p>A proper evaluation metric for deciding if a suggested topic is useful or not is hard to decide. This is mainly because even though there were several common words in the final list, they didn’t have their own Hindi Wikipedia page, even if it was present in English. For example, one of our suggested topic was मैगजीन (magazine), which despite being a common word has an English Wikipedia page of its own, but no Hindi Wikipedia page.</p>
+
+<p>Disregarding common words, our methodology did really well, especially in the case of domain expansion. For example, in the health domain, the following topics were suggested to be added:</p>
+<ul>
+  <li>मैलेनिन (melanin),</li>
+  <li>प्रोजेस्टेरान (progesterone)</li>
+  <li>प्लाजमा (plasma)</li>
+  <li>पीयूषिका (pituitary)</li>
+  <li>स्कैबीज़ (scabies)</li>
+  <li>स्पोन्डीलाइटिस (spondylitis) and several more medical terms that don’t have their own Hindi Wikipedia page.</li>
+</ul>
+
+<p>In technology domain, one example was पिन्तेरेस्ट (Pinterest).</p>
+
+<p>A lot of the new topics could help in domain expansion and depth improvement of Wikipedia.</p>
+
+<p>Similar results were also obtained for other resources. Results that were relavent to the Indian context was also obtained. For example, पधनीपुर (Dhanipur, place in Uttar Pradesh) was suggested as a new topic, even though it does not have a page in English Wikipedia. It was obtained from a BBC news article and is relavent to India. Clearly, news articles help in improving the breadth of Wikipedia. Similarly, topics extracted from Wikipedia articles themselves suggested related topics and could help improve inter-connectivity.</p>
 
 <hr />
 <h1 id="analysis">Analysis</h1>
