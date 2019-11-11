@@ -42,9 +42,33 @@ Trending Hindi news articles is a useful resource for new topics. This could pot
 
 ![Flow Chart](/assets/Resources.png)
 <!-- ### {Domain specific resources:} New topics can also be identified from domain specific blogs and articles. These domains could include health, technology, politics etc. Identification of topics from such domains would improve the depth of the existing Wikipedia. -->
+## Implementation Details
+### Improving inter-connectivity using existing Wikipedia pages
+Inter-connectivity of topics can be improved by adding more link enriching topics. Each of the Wikipedia articles can be viewed as a set of links to other Wikipedia articles. Since Hindi Wikipedia is only 1/10th the size of English Wikipedia, we hypothesize that a lot of topics can be found by filtering relevant words from pre-existing Wikipedia articles.
+Around a thousand randomly chosen HindiWikipedia articles were scraped.
+New topics extracted from these articles are related to the current topic and hence can be potential candidates for new topics if they aren’t already part of Hindi Wikipedia. This would help readers get information on related topics as the inter-connectivity of topics is better
 
-#### Header 4
+On scraping the articles, it was observed that individual articles that
+aren’t already present in Hindi Wikipedia are not very well-developed. A lot of important details are either missing or incomplete. Most of the articles were therefore quite small, or they didn’t contain too many new keywords.
 
+![Flow Chart](/assets/Articles.png)
+
+### Improving breadth of topics using news articles
+A primary resource that would help identify topics of emerging interest and trending topics is news. Popular news articles ca be scraped and keywords can be extracted from them.
+
+BBC Hindi news was scrapped for this purpose. BBC news is separated into various categories such as sports, entertainment, international, science, social and India. This made it easier to scrape as compared to other news websites. First, the homepage was scraped for articles from each category and new links were obtained by following recommendations from each page. Around 14,000 articles were scraped this way. The scraped data is present [here](https://iiitaphyd-my.sharepoint.com/:f:/g/personal/sathviksanjeev_b_research_iiit_ac_in/EqYL0iNQzFdAiclzs9uN474BZHlJa8NXPOW1h4_UdATwpQ?e=AT7xGg).
+
+Extraction of keywords from news articles would help identify completely new events, thereby helping improve the overall breadth of Hindi Wikipedia.
+
+![Flow Chart](/assets/Expansion.png)
+
+### Improving depth of topics using domain specific articles}
+Depth of Hindi Wikipedia articles can be improved by using domain specific articles. For example, by scraping articles relating to medicine and extracting corresponding keywords, we can improve the depth of the health domain.
+
+Wikipedia already has a pre-defined taxonomy and this was used as a basis for vertical expansion of Hindi encyclopedia. Articles belonging to various domains like health, movies, politics, science, sports and technology were scraped from different blogs and websites that are relevant to the specific domain. The scraped data is present [here](https://github.com/SanjanaSunil/ire-major-project/tree/master/data).
+
+#### Link to Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I7A8KhLrG1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 *   This is an unordered list following a header.
 *   This is an unordered list following a header.
 *   This is an unordered list following a header.
@@ -97,15 +121,6 @@ Trending Hindi news articles is a useful resource for new topics. This could pot
   - level 2 item
   - level 2 item
 - level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
 
 ### Definition lists can be used with HTML syntax.
 
