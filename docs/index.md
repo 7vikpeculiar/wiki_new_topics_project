@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- [Link to the code base](https://github.com/SanjanaSunil/ire-major-project). -->
+<!-- [Link to the code base](https://github.com/7vikpeculiar/wiki_new_topics_project). -->
 
 # Overview
 
