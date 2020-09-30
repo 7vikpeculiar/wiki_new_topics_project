@@ -4,7 +4,7 @@ Code in the ire-major-project directory
 
 Docs folder is for rendering the github page for this repository
 
-Original source of repo [here](https://7vikpeculiar.github.io/wiki_new_topics_project/)
+<!-- Original source of repo [here](https://7vikpeculiar.github.io/wiki_new_topics_project/) -->
 
 Website for this project (Github page) [here](https://7vikpeculiar.github.io/wiki_new_topics_project/) 
 
