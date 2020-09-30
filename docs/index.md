@@ -73,7 +73,7 @@ Extraction of keywords from news articles would help identify completely new eve
 ### Improving depth of topics using domain specific articles
 Depth of Hindi Wikipedia articles can be improved by using domain specific articles. For example, by scraping articles relating to medicine and extracting corresponding keywords, we can improve the depth of the health domain.
 
-Wikipedia already has a pre-defined taxonomy and this was used as a basis for vertical expansion of Hindi encyclopedia. Articles belonging to various domains like health, movies, politics, science, sports and technology were scraped from different blogs and websites that are relevant to the specific domain. The scraped data is present [here](https://github.com/SanjanaSunil/ire-major-project/tree/master/data).
+Wikipedia already has a pre-defined taxonomy and this was used as a basis for vertical expansion of Hindi encyclopedia. Articles belonging to various domains like health, movies, politics, science, sports and technology were scraped from different blogs and websites that are relevant to the specific domain. The scraped data is present [here](https://github.com/7vikpeculiar/wiki_new_topics_project/tree/master/ire-major-project/data).
 
 ### NER and topic identification
 
