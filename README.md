@@ -4,7 +4,7 @@ Code in the ire-major-project directory
 
 Docs folder is for rendering the github page for this repository
 
-Original source of repo [here](https://github.com/SanjanaSunil/ire-major-project)
+Original source of repo [here](https://7vikpeculiar.github.io/wiki_new_topics_project/)
 
 Website for this project (Github page) [here](https://7vikpeculiar.github.io/wiki_new_topics_project/) 
 
@@ -14,14 +14,16 @@ Website for this project (Github page) [here](https://7vikpeculiar.github.io/wik
 
 <details><summary>Table of Contents</summary><p>
 
-- [1. Project](#project)
-    - [1.1. Problem Statement](#problem-statement)
-	- [1.2. Methodology](#methodology)
-- [2. Code](#code)
-    - [2.1. Scraping](#scraping)
-	- [2.2. Named Entity Recognition](#named-entity-recognition)
-    - [2.3 Topic Identification](#topic-identification)
-- [3. Results](#results)
+- [wiki_new_topics_project](#wiki_new_topics_project)
+- [Identifying topics/pages to be included in Hindi Wikipedia](#identifying-topicspages-to-be-included-in-hindi-wikipedia)
+  - [Project](#project)
+    - [Problem Statement](#problem-statement)
+    - [Methodology](#methodology)
+  - [Code](#code)
+    - [Scraping](#scraping)
+    - [Named Entity Recognition](#named-entity-recognition)
+    - [Topic Identification](#topic-identification)
+  - [Results](#results)
 
 </p></details><p></p>
 
